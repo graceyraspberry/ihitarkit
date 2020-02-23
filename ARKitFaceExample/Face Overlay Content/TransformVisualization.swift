@@ -19,7 +19,7 @@ class TransformVisualization: NSObject, VirtualContentController {
     var leftEyeArray: Array<Float> = Array()
     var rightEyeArray: Array<Float> = Array()
     var lookAtArray: Array<Float> = Array()
-    var timeArray: Array<Double> = Array()
+    var timeArray: Array<Int> = Array()
     var faceArray: Array<Float> = Array()
     var count = 0
     
@@ -55,13 +55,17 @@ class TransformVisualization: NSObject, VirtualContentController {
 //        print("\nRight eye x: ", rightEyeX * 100)
 //        print(faceAnchor.lookAtPoint.x)
         let x = faceAnchor.lookAtPoint.x
-        let timestamp = Date().timeIntervalSince1970
-        let facecoordinate = faceAnchor.transform.columns.3.x
+        let timestamp = count
+        let facecoordinate = faceAnchor.transform.columns.2.x
         leftEyeArray.append(leftEyeX)
         rightEyeArray.append(rightEyeX)
         lookAtArray.append(x)
         timeArray.append(timestamp)
         faceArray.append(facecoordinate)
+        
+//        print("x: " + String(faceAnchor.transform.columns.1.x))
+//        print("y: " + String(faceAnchor.transform.columns.1.y))
+//        print("z: " + String(faceAnchor.transform.columns.2.x))
         
         count = count + 1
         if (count == 500) {
