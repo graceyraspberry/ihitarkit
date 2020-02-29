@@ -15,6 +15,8 @@ class ViewController: UIViewController, ARSessionDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tabBar: UITabBar!
+    
+    var update = false
 
     // MARK: Properties
 
@@ -50,6 +52,8 @@ class ViewController: UIViewController, ARSessionDelegate {
     
     // MARK: - View Controller Life Cycle
 
+    @IBOutlet weak var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,13 +61,38 @@ class ViewController: UIViewController, ARSessionDelegate {
         sceneView.session.delegate = self
         sceneView.automaticallyUpdatesLighting = true
         
+        
         // Set the initial face content.
         tabBar.selectedItem = tabBar.items!.first!
         selectedVirtualContent = VirtualContentType(rawValue: tabBar.selectedItem!.tag)
+        
     }
 
+    @IBAction func startButtonClicked(_ sender: Any) {
+        print("Button Clicked!")
+        update = true
+        
+        startButton.backgroundColor = UIColor.magenta
+        startButton.setTitle("Test in progress...", for: UIControl.State.normal)
+        
+    }
+    
+//    func void runOnMainQueueWithoutDeadlocking(void (^block)(void))
+//    {
+//        if ([Thread isMainThread])
+//        {
+//            block();
+//        }
+//        else
+//        {
+//            dispatch_sync(dispatch_get_main_queue(), block);
+//        }
+//    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         
         // AR experiences typically involve moving the device without
         // touch input for some time, so prevent auto screen dimming.
@@ -89,6 +118,8 @@ class ViewController: UIViewController, ARSessionDelegate {
         DispatchQueue.main.async {
             self.displayErrorMessage(title: "The AR session failed.", message: errorMessage)
         }
+        
+    
     }
     
     /// - Tag: ARFaceTrackingSetup
@@ -142,7 +173,9 @@ extension ViewController: ARSCNViewDelegate {
             contentNode.parent == node
             else { return }
         
-        selectedContentController.renderer(renderer, didUpdate: contentNode, for: anchor)
+        selectedContentController.renderer(renderer, didUpdate: contentNode, for: anchor, start:update)
+        
+      
     }
 }
 

@@ -4,7 +4,7 @@ See LICENSE folder for this sample’s licensing information.
 Abstract:
 Demonstrates how to simulate occlusion of virtual content by the real-world face.
 */
-
+/*
 import ARKit
 import SceneKit
 
@@ -43,7 +43,7 @@ class FaceOcclusionOverlay: NSObject, VirtualContentController {
         return contentNode
     }
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor, start:Bool) {
         guard let faceGeometry = occlusionNode.geometry as? ARSCNFaceGeometry,
             let faceAnchor = anchor as? ARFaceAnchor
             else { return }
@@ -52,3 +52,4 @@ class FaceOcclusionOverlay: NSObject, VirtualContentController {
     }
 
 }
+*/

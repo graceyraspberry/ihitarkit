@@ -4,7 +4,7 @@ See LICENSE folder for this sample’s licensing information.
 Abstract:
 A simple cartoon character animated using ARKit blend shapes.
 */
-
+/*
 import Foundation
 import SceneKit
 import ARKit
@@ -34,7 +34,7 @@ class BlendShapeCharacter: NSObject, VirtualContentController {
     }
     
     /// - Tag: BlendShapeAnimation
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor, start:Bool) {
         guard let faceAnchor = anchor as? ARFaceAnchor
             else { return }
         
@@ -48,3 +48,4 @@ class BlendShapeCharacter: NSObject, VirtualContentController {
         jawNode.position.y = originalJawY - jawHeight * jawOpen
     }
 }
+*/

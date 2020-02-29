@@ -1,9 +1,9 @@
 /*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Displays coordinate axes visualizing the tracked face pose (and eyes in iOS 12).
-*/
+ See LICENSE folder for this sample’s licensing information.
+ 
+ Abstract:
+ Displays coordinate axes visualizing the tracked face pose (and eyes in iOS 12).
+ */
 
 import ARKit
 import SceneKit
@@ -21,7 +21,10 @@ class TransformVisualization: NSObject, VirtualContentController {
     var lookAtArray: Array<Float> = Array()
     var timeArray: Array<Int> = Array()
     var faceArray: Array<Float> = Array()
+    var gain: Array<Float> = Array()
     var count = 0
+    
+    var testcomplete = false
     
     /// - Tag: ARNodeTracking
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
@@ -37,55 +40,81 @@ class TransformVisualization: NSObject, VirtualContentController {
         // Provide the node to ARKit for keeping in sync with the face anchor.
         return contentNode
     }
-
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    
+    //    func processData(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    //    guard #available(iOS 12.0, *), let faceAnchor = anchor as? ARFaceAnchor
+    //        else { return }
+    //
+    //
+    //    }
+    
+    func reset() {
+        leftEyeArray.removeAll()
+        rightEyeArray.removeAll()
+        lookAtArray.removeAll()
+        timeArray.removeAll()
+        faceArray.removeAll()
+        gain.removeAll()
+        count = 0
+    }
+    
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor, start:Bool) {
         guard #available(iOS 12.0, *), let faceAnchor = anchor as? ARFaceAnchor
             else { return }
         
         rightEyeNode.simdTransform = faceAnchor.rightEyeTransform
         leftEyeNode.simdTransform = faceAnchor.leftEyeTransform
-
-        var leftEyePosition = SCNVector3(leftEyeNode.simdTransform.columns.3.x, leftEyeNode.simdTransform.columns.3.y, leftEyeNode.simdTransform.columns.3.z)
-        var rightEyePosition = SCNVector3(rightEyeNode.simdTransform.columns.3.x, rightEyeNode.simdTransform.columns.3.y, rightEyeNode.simdTransform.columns.3.z)
-        var leftEyeX = leftEyeNode.simdTransform.columns.3.x
-        var rightEyeX = rightEyeNode.simdTransform.columns.3.x
-        let d = distance(float3(leftEyePosition), float3(rightEyePosition))
-//        print("\nInter-eye distance in centimeters: ", d * 100)
-//        print("\nLeft eye x: ", leftEyeX * 100)
-//        print("\nRight eye x: ", rightEyeX * 100)
-//        print(faceAnchor.lookAtPoint.x)
-        let x = faceAnchor.lookAtPoint.x
-        let timestamp = count
-        let facecoordinate = faceAnchor.transform.columns.2.x
-        leftEyeArray.append(leftEyeX)
-        rightEyeArray.append(rightEyeX)
-        lookAtArray.append(x)
-        timeArray.append(timestamp)
-        faceArray.append(facecoordinate)
         
-//        print("x: " + String(faceAnchor.transform.columns.1.x))
-//        print("y: " + String(faceAnchor.transform.columns.1.y))
-//        print("z: " + String(faceAnchor.transform.columns.2.x))
-        
-        count = count + 1
-        if (count == 500) {
-            //write to csv file
-            print("\nLeft eye array")
-            print(leftEyeArray)
-            print("\nRight eye array")
-            print(rightEyeArray)
-            print("\nLook at point array")
-            print(lookAtArray)
-            print("\nTime array")
-            print(timeArray)
-            print("\nFace array")
-            print(faceArray)
+        if (start) {
+            if (count == 0) {
+                print("STARTING DATA COLLECTION")
+                testcomplete = false
+            }
+            
+            let leftEyeX = leftEyeNode.simdTransform.columns.3.x
+            let rightEyeX = rightEyeNode.simdTransform.columns.3.x
+            
+            let x = faceAnchor.lookAtPoint.x
+            let timestamp = count
+            let facecoordinate = faceAnchor.transform.columns.2.x
+            leftEyeArray.append(leftEyeX)
+            rightEyeArray.append(rightEyeX)
+            lookAtArray.append(x)
+            timeArray.append(timestamp)
+            faceArray.append(facecoordinate)
+            gain.append(facecoordinate + x)
+            
+            count = count + 1
+            if (count == 500) {
+                //write to csv file
+                print("\nLeft eye array")
+                print(leftEyeArray)
+                print("\nRight eye array")
+                print(rightEyeArray)
+                print("\nLook at point array")
+                print(lookAtArray)
+                print("\nTime array")
+                print(timeArray)
+                print("\nFace array")
+                print(faceArray)
+                print("\nGain array")
+                print(gain)
+                
+                print("min gain: ")
+                print(gain.min())
+                
+                print("max gain: ")
+                print(gain.max())
+                testcomplete = true
+//                reset()
+            }
+            
         }
-//        NSMutableData * data = [NSMutableData dataWithCapacity:0];
-//
-//        [data appendBytes:&leftEyeX length:sizeof(float)];
-//        data.write("/Users/cchen/Desktop/lefteye.csv", leftEyeX)
-//        NSData.write("/Users/cchen/Desktop/righteye.csv", rightEyeX)
+    }
+    
+    func isTestComplete() -> Bool {
+        return testcomplete
     }
     
     func addEyeTransformNodes() {
@@ -98,5 +127,5 @@ class TransformVisualization: NSObject, VirtualContentController {
         anchorNode.addChildNode(rightEyeNode)
         anchorNode.addChildNode(leftEyeNode)
     }
-
+    
 }

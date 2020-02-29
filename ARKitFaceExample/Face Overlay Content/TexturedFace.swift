@@ -4,11 +4,12 @@ See LICENSE folder for this sample’s licensing information.
 Abstract:
 Displays the 3D face mesh geometry provided by ARKit, with a static texture.
 */
-
+/*
 import ARKit
 import SceneKit
 
 class TexturedFace: NSObject, VirtualContentController {
+    
 
     var contentNode: SCNNode?
     
@@ -32,7 +33,7 @@ class TexturedFace: NSObject, VirtualContentController {
     }
     
     /// - Tag: ARFaceGeometryUpdate
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor, start:Bool) {
         guard let faceGeometry = node.geometry as? ARSCNFaceGeometry,
             let faceAnchor = anchor as? ARFaceAnchor
             else { return }
@@ -41,3 +42,4 @@ class TexturedFace: NSObject, VirtualContentController {
     }
 
 }
+*/

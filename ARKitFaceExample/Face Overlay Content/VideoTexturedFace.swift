@@ -4,7 +4,7 @@ See LICENSE folder for this sample’s licensing information.
 Abstract:
 Demonstrates using video imagery to texture and modify the face mesh.
 */
-
+/*
 import ARKit
 import SceneKit
 
@@ -43,3 +43,4 @@ class VideoTexturedFace: TexturedFace {
     }
     
 }
+*/

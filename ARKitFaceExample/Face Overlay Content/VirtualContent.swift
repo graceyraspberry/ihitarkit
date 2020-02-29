@@ -12,18 +12,19 @@ enum VirtualContentType: Int {
     case transforms, texture, geometry, videoTexture, blendShape
     
     func makeController() -> VirtualContentController {
-        switch self {
-        case .transforms:
-            return TransformVisualization()
-        case .texture:
-            return TexturedFace()
-        case .geometry:
-            return FaceOcclusionOverlay()
-        case .videoTexture:
-            return VideoTexturedFace()
-        case .blendShape:
-            return BlendShapeCharacter()
-        }
+        return TransformVisualization()
+//        switch self {
+//        case .transforms:
+//            return TransformVisualization()
+//        case .texture:
+//            return TexturedFace()
+//        case .geometry:
+//            return FaceOcclusionOverlay()
+//        case .videoTexture:
+//            return VideoTexturedFace()
+//        case .blendShape:
+//            return BlendShapeCharacter()
+//        }
     }
 }
 
@@ -34,5 +35,7 @@ protocol VirtualContentController: ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode?
     
-    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor)
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor, start:Bool)
+    
+    func isTestComplete() -> Bool
 }
