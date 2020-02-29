@@ -12,6 +12,8 @@
 		11764D981FB1344900D90F75 /* VideoTexturedFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11764D971FB1344900D90F75 /* VideoTexturedFace.swift */; };
 		11EC6AE12134CD18003C1B28 /* VideoTexturedFace.shader in Resources */ = {isa = PBXBuildFile; fileRef = 11EC6AE02134CD18003C1B28 /* VideoTexturedFace.shader */; };
 		11EE23D2213479CF00C0DEAD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE23D1213479CF00C0DEAD /* Utilities.swift */; };
+		158ACEB7240B1082002029EF /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEB6240B1082002029EF /* VisualizerViewController.swift */; };
+		158ACEBE240B20B8002029EF /* VisualizerLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */; };
 		3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */; };
 		3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48D1E89EC2C00E00B60 /* ViewController.swift */; };
 		3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3929C48F1E89EC2C00E00B60 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		11EC6AE02134CD18003C1B28 /* VideoTexturedFace.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = VideoTexturedFace.shader; sourceTree = "<group>"; };
 		11EE23D1213479CF00C0DEAD /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		11F053B72130CCD2005FCAF2 /* ARFaceGeometry.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ARFaceGeometry.obj; sourceTree = "<group>"; };
+		158ACEB6240B1082002029EF /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
+		158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerLauncher.swift; sourceTree = "<group>"; };
 		3929C4881E89EC2C00E00B60 /* ARKitFaceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitFaceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,8 +70,17 @@
 				3929C48F1E89EC2C00E00B60 /* Main.storyboard */,
 				39D8DC1A1E8ADAE600386B05 /* LaunchScreen.storyboard */,
 				11EC6AE02134CD18003C1B28 /* VideoTexturedFace.shader */,
+				158ACEB6240B1082002029EF /* VisualizerViewController.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		158ACEBA240B1CEC002029EF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		3929C47F1E89EC2C00E00B60 = {
@@ -93,6 +106,7 @@
 		3929C48A1E89EC2C00E00B60 /* ARKitFaceExample */ = {
 			isa = PBXGroup;
 			children = (
+				158ACEBA240B1CEC002029EF /* Helper */,
 				3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */,
 				3929C48D1E89EC2C00E00B60 /* ViewController.swift */,
 				C8904E581F4CFE380089E530 /* Face Overlay Content */,
@@ -163,7 +177,7 @@
 				TargetAttributes = {
 					3929C4871E89EC2C00E00B60 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = MA5GA5485F;
+						DevelopmentTeam = DX29Z5D44Z;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
@@ -209,7 +223,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				116FDD742130A6BD008404D3 /* TransformVisualization.swift in Sources */,
+				158ACEBE240B20B8002029EF /* VisualizerLauncher.swift in Sources */,
 				C81DA0C61F4CC79A002AF1DA /* FaceOcclusionOverlay.swift in Sources */,
+				158ACEB7240B1082002029EF /* VisualizerViewController.swift in Sources */,
 				11012C161F3D07BC0099F3A4 /* BlendShapeCharacter.swift in Sources */,
 				3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */,
 				3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */,
@@ -357,7 +373,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MA5GA5485F;
+				DEVELOPMENT_TEAM = DX29Z5D44Z;
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitFaceExample/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME}${SAMPLE_CODE_DISAMBIGUATOR}";
@@ -376,7 +392,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MA5GA5485F;
+				DEVELOPMENT_TEAM = DX29Z5D44Z;
 				INFOPLIST_FILE = "$(SRCROOT)/ARKitFaceExample/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.${PRODUCT_NAME}${SAMPLE_CODE_DISAMBIGUATOR}";

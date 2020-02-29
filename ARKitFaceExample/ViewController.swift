@@ -16,6 +16,11 @@ class ViewController: UIViewController, ARSessionDelegate {
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var tabBar: UITabBar!
 
+    @IBAction func callVideoPlayer(_ sender: Any) {
+        let visualizer = VisualizerLauncher()
+        visualizer.showVideoPlayer()
+    }
+    
     // MARK: Properties
 
     var contentControllers: [VirtualContentType: VirtualContentController] = [:]
