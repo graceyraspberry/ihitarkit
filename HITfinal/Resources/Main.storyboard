@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="HITfinal" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RLh-bf-1c3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6c-py-dvH" customClass="ARSCNView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </sceneKitView>
+                            <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="d27-hx-eNe">
+                                <rect key="frame" x="0.0" y="729" width="375" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Transforms" image="transforms" id="E1z-NA-Fpn"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="DBZ-Ne-uk1"/>
+                                </connections>
+                            </tabBar>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbo-jx-iuF" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="52" width="359" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NoB-cK-rGt">
+                                <rect key="frame" x="134" y="673" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Graph">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="graphButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="yh2-QF-YoD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyD-8Y-9os">
+                                <rect key="frame" x="134" y="619" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="hop-DT-Ukx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qbo-jx-iuF" secondAttribute="bottom" constant="616" id="1gD-LP-44E"/>
+                            <constraint firstAttribute="bottom" secondItem="E6c-py-dvH" secondAttribute="bottom" id="4Ch-Kb-0fx"/>
+                            <constraint firstItem="E6c-py-dvH" firstAttribute="trailing" secondItem="d27-hx-eNe" secondAttribute="trailing" id="7sF-as-KLl"/>
+                            <constraint firstAttribute="trailing" secondItem="d27-hx-eNe" secondAttribute="trailing" id="AG4-v4-dES"/>
+                            <constraint firstItem="qbo-jx-iuF" firstAttribute="centerX" secondItem="d27-hx-eNe" secondAttribute="centerX" id="chf-kB-Gl2"/>
+                            <constraint firstItem="qbo-jx-iuF" firstAttribute="top" secondItem="GBj-4O-Whc" secondAttribute="top" constant="8" id="dnw-Db-rW0"/>
+                            <constraint firstItem="d27-hx-eNe" firstAttribute="bottom" secondItem="RLh-bf-1c3" secondAttribute="bottom" symbolic="YES" id="gEr-ol-2EN"/>
+                            <constraint firstItem="qbo-jx-iuF" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" constant="8" id="ipx-yC-oh1"/>
+                            <constraint firstItem="GBj-4O-Whc" firstAttribute="trailing" secondItem="qbo-jx-iuF" secondAttribute="trailing" constant="8" id="ir7-Nh-1xa"/>
+                            <constraint firstItem="E6c-py-dvH" firstAttribute="leading" secondItem="d27-hx-eNe" secondAttribute="leading" id="rlX-It-0G6"/>
+                            <constraint firstItem="d27-hx-eNe" firstAttribute="leading" secondItem="GBj-4O-Whc" secondAttribute="leading" id="txU-4e-gMI"/>
+                            <constraint firstItem="E6c-py-dvH" firstAttribute="top" secondItem="RLh-bf-1c3" secondAttribute="top" id="yHv-rs-Wlk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GBj-4O-Whc"/>
+                    </view>
+                    <connections>
+                        <outlet property="graphButton" destination="NoB-cK-rGt" id="iKw-i7-pmr"/>
+                        <outlet property="lineChartView" destination="qbo-jx-iuF" id="IPW-ua-E48"/>
+                        <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
+                        <outlet property="startButton" destination="RyD-8Y-9os" id="s1K-01-hFC"/>
+                        <outlet property="tabBar" destination="d27-hx-eNe" id="wGk-cE-feE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="98.275862068965523"/>
+        </scene>
+        <!--Unsupported View Controller-->
+        <scene sceneID="QPm-sc-AhW">
+            <objects>
+                <viewController storyboardIdentifier="unsupportedDeviceMessage" id="Ww5-bb-kFx" userLabel="Unsupported View Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nKl-Ig-Sg0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unsupported Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-yC-UYf">
+                                <rect key="frame" x="20" y="288.33333333333331" width="335" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-rh-boK">
+                                <rect key="frame" x="20" y="330" width="335" height="152.33333333333337"/>
+                                <string key="text">ARKit face tracking requires a device with a TrueDepth front-facing camera.
+
+Shipping apps must support devices without face tracking. In your app, offer UI to launch face tracking features only if the current device is supported.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oqL-yC-UYf" firstAttribute="centerX" secondItem="nKl-Ig-Sg0" secondAttribute="centerX" id="4XK-M5-Qld"/>
+                            <constraint firstItem="Ach-rh-boK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nKl-Ig-Sg0" secondAttribute="leading" constant="20" symbolic="YES" id="AFv-0A-dZI"/>
+                            <constraint firstItem="oqL-yC-UYf" firstAttribute="width" secondItem="Ach-rh-boK" secondAttribute="width" id="FAc-2f-dTL"/>
+                            <constraint firstItem="Ach-rh-boK" firstAttribute="centerY" secondItem="nKl-Ig-Sg0" secondAttribute="centerY" id="J2Q-vj-ifu"/>
+                            <constraint firstItem="Ach-rh-boK" firstAttribute="centerX" secondItem="nKl-Ig-Sg0" secondAttribute="centerX" id="ME0-ye-UxJ"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ach-rh-boK" secondAttribute="trailing" constant="20" symbolic="YES" id="hbq-EQ-aUs"/>
+                            <constraint firstItem="Ach-rh-boK" firstAttribute="top" secondItem="oqL-yC-UYf" secondAttribute="bottom" constant="8" symbolic="YES" id="mW3-Zk-UIb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xCr-dq-97a"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01d-4b-zAD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="97.536945812807886"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="transforms" width="28" height="28"/>
+    </resources>
+</document>
