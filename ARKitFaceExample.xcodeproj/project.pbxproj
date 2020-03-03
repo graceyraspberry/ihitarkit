@@ -14,6 +14,8 @@
 		11EE23D2213479CF00C0DEAD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EE23D1213479CF00C0DEAD /* Utilities.swift */; };
 		158ACEB7240B1082002029EF /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEB6240B1082002029EF /* VisualizerViewController.swift */; };
 		158ACEBE240B20B8002029EF /* VisualizerLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */; };
+		158ACEC0240B34FC002029EF /* VideoRecorderGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEBF240B34FB002029EF /* VideoRecorderGenerator.swift */; };
+		158ACEC2240B3503002029EF /* HITTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158ACEC1240B3503002029EF /* HITTestViewController.swift */; };
 		3929C48C1E89EC2C00E00B60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */; };
 		3929C48E1E89EC2C00E00B60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3929C48D1E89EC2C00E00B60 /* ViewController.swift */; };
 		3929C4911E89EC2C00E00B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3929C48F1E89EC2C00E00B60 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 		11F053B72130CCD2005FCAF2 /* ARFaceGeometry.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ARFaceGeometry.obj; sourceTree = "<group>"; };
 		158ACEB6240B1082002029EF /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerLauncher.swift; sourceTree = "<group>"; };
+		158ACEBF240B34FB002029EF /* VideoRecorderGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoRecorderGenerator.swift; path = ../../../../../Desktop/VideoRecorderGenerator.swift; sourceTree = "<group>"; };
+		158ACEC1240B3503002029EF /* HITTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HITTestViewController.swift; path = ../../../../../Desktop/HITTestViewController.swift; sourceTree = "<group>"; };
 		3929C4881E89EC2C00E00B60 /* ARKitFaceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitFaceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3929C48B1E89EC2C00E00B60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3929C48D1E89EC2C00E00B60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		158ACEBA240B1CEC002029EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				158ACEC1240B3503002029EF /* HITTestViewController.swift */,
+				158ACEBF240B34FB002029EF /* VideoRecorderGenerator.swift */,
 				158ACEBD240B20B8002029EF /* VisualizerLauncher.swift */,
 			);
 			path = Helper;
@@ -224,6 +230,7 @@
 			files = (
 				116FDD742130A6BD008404D3 /* TransformVisualization.swift in Sources */,
 				158ACEBE240B20B8002029EF /* VisualizerLauncher.swift in Sources */,
+				158ACEC2240B3503002029EF /* HITTestViewController.swift in Sources */,
 				C81DA0C61F4CC79A002AF1DA /* FaceOcclusionOverlay.swift in Sources */,
 				158ACEB7240B1082002029EF /* VisualizerViewController.swift in Sources */,
 				11012C161F3D07BC0099F3A4 /* BlendShapeCharacter.swift in Sources */,
@@ -233,6 +240,7 @@
 				11764D981FB1344900D90F75 /* VideoTexturedFace.swift in Sources */,
 				11EE23D2213479CF00C0DEAD /* Utilities.swift in Sources */,
 				C8904E571F4CFD730089E530 /* TexturedFace.swift in Sources */,
+				158ACEC0240B34FC002029EF /* VideoRecorderGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,6 +59,7 @@
                     <connections>
                         <outlet property="sceneView" destination="E6c-py-dvH" id="Gr4-Uw-Z4A"/>
                         <outlet property="tabBar" destination="d27-hx-eNe" id="wGk-cE-feE"/>
+                        <segue destination="ivU-Pt-9a5" kind="show" identifier="goVisualizer" id="UbF-mS-CPc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -70,11 +71,12 @@
             <objects>
                 <viewController id="ivU-Pt-9a5" customClass="VisualizerViewController" customModule="ARKitFaceExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vZx-1N-nlf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="yRq-sb-LCf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="COf-eE-aw5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5eb-JL-me3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

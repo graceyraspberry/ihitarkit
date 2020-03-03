@@ -11,6 +11,8 @@ import AVKit
 import AVFoundation
 
 class VisualizerViewController: UIViewController {
+    
+    var url: URL?
 
     @IBAction func onCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -18,11 +20,14 @@ class VisualizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        
+        
         let visualizer = VisualizerLauncher()
-        visualizer.showVideoPlayer()
-        // Do any additional setup after loading the view.
+        visualizer.showVideoPlayer(url: url!)
+
     }
-    
+
     
     /*
     // MARK: - Navigation

@@ -68,7 +68,7 @@ class TransformVisualization: NSObject, VirtualContentController {
 //        print("z: " + String(faceAnchor.transform.columns.2.x))
         
         count = count + 1
-        if (count == 500) {
+        if (count == -1) {
             //write to csv file
             print("\nLeft eye array")
             print(leftEyeArray)
